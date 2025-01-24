@@ -2,9 +2,49 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+<!-- {% if user.is_authenticated %} -->
+<div>
+	<div class="row">
+		<div class="col-sm-14 col-md-6 mx-auto mt-5 px-3">
+			<h1 class="fw-light">Track and Manage Your Inventory</h1>
+			<br>
+			<table class="table table-hover">
+				<thead class="table-primary">
+				  <tr>
+					<th scope="col">ID</th>
+					<th scope="col">Product</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Category</th>
+				  </tr>
+				</thead>
+				<tbody>
+				<!-- {% if items|length == 0 %} -->
+				<tr class="table-dark">
+					<th scope="row">-</th>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<!-- {% else %} -->
+				<tr class="table-dark">
+					{% for item in items %}
+					<th scope="row">{{ item.id }}</th>
+					<td>{{ item.product }}</td>
+					<td>{{ item.quantity }}</td>
+					<td>{{ item.category.name }}</td>
+				</tr>
+					{% endfor %}
+				<!-- {% endif %} -->
+				
 
-{% else %}
+				</tbody>
+			  </table>
+
+		</div>
+	</div>
+</div>
+
+<!-- {% else %}
 <div>
 	<div class="row">
 		<div class="col-sm-11 col-md-4 mx-auto mt-5 px-3">
@@ -17,5 +57,5 @@
 		</div>
 	</div>
 </div>
-{% endif %}
+{% endif %} -->
 {% endblock content %}
