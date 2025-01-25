@@ -13,13 +13,14 @@ class Index(TemplateView):
 
     def get(self, request):
         items = InventoryItem.objects.all().order_by('id')
-        return render(request, 'inventory/index.html', {'items': items})
+        return render(request, self.template_name, {'items': items})
 
 class Navbar(TemplateView):
-      template_name = 'inventory/navbar.html'
-      def get(self, request):
-            categories = Category.objects.all()
-            return render(request, 'inventory/navbar.html', {'categories': categories})
+    template_name = 'inventory/navbar.html'
+    
+    def get(self, request):
+        categories = Category.objects.all()
+        return render(request, self.template_name, {'categories': categories})
 
 
 

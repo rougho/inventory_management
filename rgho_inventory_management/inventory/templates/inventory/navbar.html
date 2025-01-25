@@ -35,8 +35,10 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
             <div class="dropdown-menu">
               {% for category in categories %}
-              <a class="dropdown-item" href="#">{{category.name}}</a>
-              {% endfor %}
+              <a class="dropdown-item" href="#">{{ category.name }}</a>
+          {% empty %}
+              <p>No categories available.</p>
+          {% endfor %}
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Separated link</a>
             </div>
