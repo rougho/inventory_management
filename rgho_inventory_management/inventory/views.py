@@ -11,6 +11,19 @@ from django.contrib import messages
 class Index(TemplateView):
     template_name= 'inventory/index.html'
 
+    def get(self, request):
+        items = InventoryItem.objects.all().order_by('id')
+        return render(request, 'inventory/index.html', {'items': items})
+
+class Navbar(TemplateView):
+      template_name = 'inventory/navbar.html'
+      def get(self, request):
+            categories = Category.objects.all()
+            return render(request, 'inventory/navbar.html', {'categories': categories})
+
+
+
+
 class SignUp(View):
     def get(self, request):
         form = UserRegisterForm()
@@ -50,9 +63,4 @@ class Dashboard(LoginRequiredMixin, View):
 		).values_list('id', flat=True)
 
 		return render(request, 'inventory/dashboard.html', {'items': items, 'low_inventory_ids': low_inventory_ids})
-
-class Availability(View):
-      def get(self, request):
-        items = InventoryItem.objects.order_by('id')
-        return render(request, 'inventory/index.html', {'items': items})
 

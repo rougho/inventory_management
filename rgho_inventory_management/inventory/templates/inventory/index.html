@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<!-- {% if user.is_authenticated %} -->
 <div>
 	<div class="row">
 		<div class="col-sm-14 col-md-6 mx-auto mt-5 px-3">
@@ -18,14 +17,14 @@
 				  </tr>
 				</thead>
 				<tbody>
-				<!-- {% if items|length == 0 %} -->
+				{% if items|length == 0 %}
 				<tr class="table-dark">
 					<th scope="row">-</th>
 					<td>-</td>
 					<td>-</td>
 					<td>-</td>
 				</tr>
-				<!-- {% else %} -->
+				{% else %}
 				<tr class="table-dark">
 					{% for item in items %}
 					<th scope="row">{{ item.id }}</th>
@@ -34,7 +33,7 @@
 					<td>{{ item.category.name }}</td>
 				</tr>
 					{% endfor %}
-				<!-- {% endif %} -->
+				{% endif %}
 				
 
 				</tbody>
@@ -44,18 +43,5 @@
 	</div>
 </div>
 
-<!-- {% else %}
-<div>
-	<div class="row">
-		<div class="col-sm-11 col-md-4 mx-auto mt-5 px-3">
-			<h1 class="fw-light">Track and Manage Your Inventory</h1>
-			<p class="fw-light">Keep track of your inventory and receive quantity alerts for low inventory</p>
 
-			<div>
-				<a href="" class="btn btn-primary">Get Started Now!</a>
-			</div>
-		</div>
-	</div>
-</div>
-{% endif %} -->
 {% endblock content %}
