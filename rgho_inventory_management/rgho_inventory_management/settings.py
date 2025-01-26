@@ -140,3 +140,5 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGIN_URL = 'login'
+
+LOW_QUANTITY = 2

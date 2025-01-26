@@ -1,4 +1,40 @@
-.footer-hr{
+/* .footer-hr{
     width: 60%; height: 5px; color: white; margin: auto;
-}
+} */
 
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .row, .container {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  img {
+    max-width: 100%; /* Prevent images from overflowing */
+    height: auto;
+  }
+  
+  .table-responsive {
+    max-width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Custom Bootstrap overrides */
+  html, body {
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+  }
+  
+  
